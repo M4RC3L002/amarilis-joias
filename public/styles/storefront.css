@@ -689,85 +689,84 @@ dialog {
     filter: none !important;
   }
 }
-/* Center the main brand independently of search and shopping controls. */
+/* Three centered rows: navigation, brand, then search. */
 #header .nav {
   display: grid;
   grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
-  gap: 18px 28px;
-  padding: 24px 32px 18px;
-  min-height: 135px;
+  gap: 20px 28px;
+  padding: 22px 32px;
+}
+#header .navlinks {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  grid-column: 1 / -1;
+  grid-row: 1;
+  position: static;
+  width: min(100%, 320px);
+  justify-self: center;
+  align-items: center;
+  gap: 28px;
+  padding: 0;
+  margin: 0;
+  background: transparent;
+  color: var(--green);
+  border-radius: 0;
+}
+#header .navlinks a:first-child {
+  justify-self: end;
+}
+#header .navlinks a:last-child {
+  justify-self: start;
 }
 #header .brand {
   grid-column: 2;
-  grid-row: 1;
+  grid-row: 2;
   background: none;
   padding: 0;
   width: 230px;
   justify-self: center;
 }
 #header .brand img {
-  width: 230px;
+  width: 100%;
   height: auto;
   display: block;
 }
 #header .header-search {
-  grid-column: 1;
-  grid-row: 1;
+  grid-column: 1 / -1;
+  grid-row: 3;
   width: 100%;
-  max-width: 320px;
+  max-width: 520px;
   min-width: 0;
+  justify-self: center;
 }
 #header .actions {
   grid-column: 3;
-  grid-row: 1;
-  justify-self: end;
-}
-#header .navlinks {
-  grid-column: 1/-1;
   grid-row: 2;
-  justify-content: center;
-  justify-self: center;
+  justify-self: end;
 }
 @media (max-width: 800px) {
   #header .nav {
-    padding: 20px 16px 14px;
-    gap: 16px 12px;
-    grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+    padding: 18px 16px;
+    gap: 18px 12px;
   }
-  #header .brand,
-  #header .brand img {
+  #header .brand {
     width: 170px;
   }
   #header .header-search {
-    grid-column: 1/-1;
-    grid-row: 2;
-    max-width: none;
     display: block;
+  }
+  #header .navlinks {
+    gap: 24px;
   }
   #header .actions {
     gap: 6px;
   }
-  #header .actions .mobile-search {
-    display: none;
-  }
-  #header .navlinks {
-    grid-row: auto;
-  }
-  #header .navlinks.open {
-    justify-self: stretch;
-  }
   #header .actions .icon {
     min-width: 32px;
   }
-  #header .menu {
-    position: absolute;
-    left: 16px;
-    top: 56px;
-  }
 }
 @media (max-width: 380px) {
-  #header .brand,
-  #header .brand img {
+  #header .brand {
     width: 145px;
   }
   #header .actions {

@@ -8,7 +8,10 @@ function header(home) {
       Primeira coleção em preparação · Conheça o universo Amarílis
     </div>
     <nav class="nav" aria-label="Navegação principal">
-      <a class="brand" href="#/" aria-label="Amarílis Jóias, início"
+      <div class="navlinks" id="navlinks">
+        <a href="#/sobre">Amarílis</a><a href="#/">Início</a><a href="#/contato">Contato</a>
+      </div>
+      <a class="brand" href="#/" aria-label="Amarílis, início"
         ><img src="assets/logo-header.svg" alt="Amarílis"
       /></a>
       <form class="header-search" id="headerSearchForm" role="search">
@@ -20,38 +23,15 @@ function header(home) {
           maxlength="80"
         /><button aria-label="Buscar no catálogo">${icon('search')}</button>
       </form>
-      <div class="navlinks" id="navlinks">
-        <a href="#/">Início</a><a href="#/catalogo">Joias</a><a href="#/sobre">Amarílis</a
-        ><a href="#/contato">Contato</a>
-      </div>
       <div class="actions">
-        <button class="icon mobile-search" data-search aria-label="Buscar joias">
-          ${icon('search')}</button
-        ><a class="icon" href="#/favoritos" aria-label="Favoritos"
+        <a class="icon" href="#/favoritos" aria-label="Favoritos"
           >${icon('heart')}<span class="action-label">Favoritos</span
           ><span class="counter" id="favoriteCount">${favorites.length}</span></a
-        ><a class="icon" href="#/carrinho" aria-label="Carrinho"
+        >
+        <a class="icon" href="#/carrinho" aria-label="Carrinho"
           >${icon('cart')}<span class="action-label">Carrinho</span
           ><span class="counter" id="cartCount">${count()}</span></a
-        ><button
-          class="menu"
-          data-menu
-          aria-controls="navlinks"
-          aria-expanded="false"
-          aria-label="Abrir menu"
         >
-          <svg
-            width="22"
-            height="22"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="1.5"
-            aria-hidden="true"
-          >
-            <path d="M3 6h18M3 12h18M3 18h18" />
-          </svg>
-        </button>
       </div>
     </nav>
     <nav class="header-categories" aria-label="Categorias de joias">
