@@ -1,3 +1,5 @@
+let featuredCategory = '';
+
 function home() {
   return html` <section class="hero" data-design="desktop-header-7">
       <img
@@ -36,7 +38,15 @@ function home() {
           .map(
             (c) =>
               html`<a href="#/catalogo?categoria=${encodeURIComponent(c)}"
-                ><span class="category-circle">${categoryIcon(c)}</span><span>${c}</span></a
+                ><span class="category-circle"
+                  >${products.some((p) => p.category === c)
+                    ? html`<img
+                        src="${products.find((p) => p.category === c).image}"
+                        alt=""
+                        loading="lazy"
+                      />`
+                    : categoryIcon(c)}</span
+                ><span>${c}</span></a
               >`,
           )
           .join('')}
@@ -50,7 +60,51 @@ function home() {
         </div>
         <a class="textlink" href="#/catalogo">Explorar catálogo</a>
       </div>
-      <div class="grid">${products.map(card).join('')}</div>
+      <div class="showcase-filters" role="group" aria-label="Filtrar joias em destaque">
+        ${['', ...new Set(products.map((p) => p.category))]
+          .map(
+            (c) =>
+              html`<button
+                data-featured-category="${esc(c)}"
+                aria-controls="featuredGrid"
+                aria-pressed="${featuredCategory === c}"
+              >
+                ${c || 'Todos os detalhes'}
+              </button>`,
+          )
+          .join('')}
+      </div>
+      <p class="sr-only" id="featuredStatus" role="status"></p>
+      <div class="grid" id="featuredGrid">
+        ${products
+          .filter((p) => !featuredCategory || p.category === featuredCategory)
+          .map(card)
+          .join('')}
+      </div>
+    </section>
+    <section class="collection-stories wrap" aria-label="Explore o universo Amarílis">
+      <a class="collection-story" href="#/catalogo?categoria=Conjuntos"
+        ><img
+          src="assets/jewelry-29503017.jpg"
+          alt="Conjunto dourado de referência com desenho de folhas"
+          loading="lazy"
+        />
+        <div class="collection-caption">
+          <h2>Detalhes que se completam.</h2>
+          <span>Explore os conjuntos ${icon('chevron')}</span>
+        </div></a
+      >
+      <a class="collection-story gift-story" href="#/sobre"
+        ><img
+          src="assets/brand-3.jpg"
+          alt="Apresentação de uma caixa Amarílis com uma joia floral"
+          loading="lazy"
+        />
+        <div class="collection-caption">
+          <h2>O carinho está nos detalhes.</h2>
+          <span>Conheça a identidade da marca ${icon('chevron')}</span>
+        </div></a
+      >
     </section>
     <section class="story wrap">
       <img

@@ -1,6 +1,18 @@
 document.addEventListener('click', (e) => {
   const b = e.target.closest('button');
   if (!b) return;
+  if (b.hasAttribute('data-featured-category')) {
+    featuredCategory = b.dataset.featuredCategory;
+    const selected = products.filter((p) => !featuredCategory || p.category === featuredCategory);
+    $('#featuredGrid').innerHTML = selected.map(card).join('');
+    document
+      .querySelectorAll('[data-featured-category]')
+      .forEach((control) =>
+        control.setAttribute('aria-pressed', control.dataset.featuredCategory === featuredCategory),
+      );
+    $('#featuredStatus').textContent =
+      `${selected.length} peças de referência em ${featuredCategory || 'todas as categorias'}`;
+  }
   if (b.hasAttribute('data-menu')) {
     const open = $('#navlinks').classList.toggle('open');
     b.setAttribute('aria-expanded', open);

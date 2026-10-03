@@ -243,3 +243,33 @@
     text-underline-offset: 5px;
   }
 }
+
+.collection-story > img,
+.category-circle img {
+  transition: transform var(--motion-standard) var(--ease-out);
+}
+.showcase-filters button {
+  transition: color var(--motion-fast) ease;
+}
+.collection-caption span > img {
+  transition: transform var(--motion-fast) var(--ease-out);
+}
+@media (hover: hover) and (pointer: fine) {
+  .collection-story:hover > img,
+  .shop-categories a:hover .category-circle img {
+    transform: scale(1.035);
+  }
+  .collection-story:hover .collection-caption span > img {
+    transform: translateX(4px);
+  }
+  .showcase-filters button:hover {
+    color: var(--green);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .collection-story:hover > img,
+  .shop-categories a:hover .category-circle img,
+  .collection-story:hover .collection-caption span > img {
+    transform: none;
+  }
+}
