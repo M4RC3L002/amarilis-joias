@@ -7,24 +7,24 @@ Vitrine demonstrativa da Amarílis: catálogo, busca, favoritos, carrinho e revi
 ## Organização
 
 ```text
-public/                 Arquivos publicados pelo Cloudflare
+public/
   index.html            Entrada da aplicação
-assets/                 Fotografias, logotipos e ícones
-data/catalog.json       Catálogo demonstrativo e fontes das fotos
-styles/
-  base.css              Tokens, controles e layout das páginas
-  storefront.css        Identidade e composição da vitrine
-  motion.css            Acabamento visual e transições
-scripts/
-  state.js              Estado local, persistência e notificações
-  components.js         Cabeçalho, rodapé e controles compartilhados
-  pages/                Renderização de cada página
-  router.js             Rotas por hash
-  events.js             Interações, busca e checkout
-  motion.js             Movimento e preferência de acessibilidade
-  main.js               Carregamento inicial do catálogo
-tools/check.mjs         Verificação de sintaxe e arquivos necessários
-docs/                   Arquitetura, créditos e revisão
+  assets/               Fotografias, logotipos e ícones
+  data/catalog.json     Catálogo e fontes das fotos
+  styles/
+    base.css            Tokens, controles e layout das páginas
+    storefront.css      Identidade e composição da vitrine
+    motion.css          Acabamento visual e transições
+  scripts/
+    state.js            Estado local e persistência
+    components.js       Cabeçalho, rodapé e controles
+    pages/              Renderização de cada página
+    router.js           Rotas por hash
+    events.js           Interações, busca e checkout
+    motion.js           Movimento e acessibilidade
+    main.js             Carregamento inicial
+tools/check.mjs        Verificação de sintaxe e arquivos
+docs/                  Arquitetura, créditos e revisão
 ```
 
 ## Rodar localmente
