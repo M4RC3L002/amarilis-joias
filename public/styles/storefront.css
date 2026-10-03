@@ -1173,3 +1173,12 @@ dialog {
   }
 }
 
+/* Bridge the padding between the category trigger and its absolute panel. */
+.mega-panel::before {
+  content: '';
+  position: absolute;
+  top: -24px;
+  left: 0;
+  right: 0;
+  height: 24px;
+}

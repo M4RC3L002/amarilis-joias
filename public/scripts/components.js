@@ -225,6 +225,7 @@ function setupCategoryMenus() {
   const entries = [...root.querySelectorAll('.category-entry')];
   for (const entry of entries) {
     let openedByHover = false;
+    let closeTimer;
     entry.querySelector('summary').addEventListener('click', (e) => {
       if (openedByHover && entry.open) {
         e.preventDefault();
@@ -235,21 +236,23 @@ function setupCategoryMenus() {
       if (entry.open) for (const other of entries) if (other !== entry) other.open = false;
     });
     entry.addEventListener('mouseenter', () => {
+      clearTimeout(closeTimer);
       if (matchMedia('(hover: hover) and (pointer: fine)').matches && !entry.open) {
         openedByHover = true;
         entry.open = true;
       }
     });
     entry.addEventListener('mouseleave', () => {
-      if (
-        !entry.contains(document.activeElement) &&
-        matchMedia('(hover: hover) and (pointer: fine)').matches
-      )
-        entry.open = false;
+      closeTimer = setTimeout(() => {
+        if (
+          !entry.contains(document.activeElement) &&
+          matchMedia('(hover: hover) and (pointer: fine)').matches
+        )
+          entry.open = false;
+      }, 250);
     });
     entry.addEventListener('focusout', (e) => {
       if (!entry.contains(e.relatedTarget)) entry.open = false;
     });
   }
 }
-
