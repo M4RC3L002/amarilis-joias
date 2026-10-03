@@ -1,0 +1,14 @@
+{
+  "name": "amarilis-joias",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Vitrine demonstrativa Amarílis Jóias",
+  "scripts": {
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "check": "node tools/check.mjs"
+  },
+  "devDependencies": {
+    "prettier": "3.6.2"
+  }
+}

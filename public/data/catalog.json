@@ -1,0 +1,66 @@
+{
+  "demo": true,
+  "checkoutEnabled": false,
+  "products": [
+    {
+      "id": "brincos",
+      "name": "Brincos em preto e dourado",
+      "category": "Brincos",
+      "image": "assets/jewelry-10457804.jpg",
+      "price": null,
+      "stock": null,
+      "source": "https://www.pexels.com/photo/earrings-on-a-white-background-10457804/",
+      "description": "Fotografia real de referência para demonstrar a vitrine. Esta peça não pertence ao catálogo comercial da Amarílis. Materiais, medidas e disponibilidade não foram definidos."
+    },
+    {
+      "id": "colar",
+      "name": "Colar com medalhão",
+      "category": "Colares",
+      "image": "assets/jewelry-7566940.jpg",
+      "price": null,
+      "stock": null,
+      "source": "https://www.pexels.com/photo/gold-round-pendant-necklace-on-white-textile-7566940/",
+      "description": "Fotografia real de referência para demonstrar a vitrine. Esta peça não pertence ao catálogo comercial da Amarílis. Materiais, medidas e disponibilidade não foram definidos."
+    },
+    {
+      "id": "pulseira",
+      "name": "Pulseira de elos",
+      "category": "Pulseiras",
+      "image": "assets/jewelry-12194237.jpg",
+      "price": null,
+      "stock": null,
+      "source": "https://www.pexels.com/photo/gold-bracelet-in-close-up-photography-12194237/",
+      "description": "Fotografia real de referência para demonstrar a vitrine. Esta peça não pertence ao catálogo comercial da Amarílis. Materiais, medidas e disponibilidade não foram definidos."
+    },
+    {
+      "id": "conjunto",
+      "name": "Conjunto de detalhes dourados",
+      "category": "Conjuntos",
+      "image": "assets/jewelry-29502924.jpg",
+      "price": null,
+      "stock": null,
+      "source": "https://www.pexels.com/photo/elegant-gold-jewelry-set-with-necklace-and-earrings-29502924/",
+      "description": "Fotografia real de referência para demonstrar a vitrine. Esta peça não pertence ao catálogo comercial da Amarílis. Materiais, medidas e disponibilidade não foram definidos."
+    },
+    {
+      "id": "folhas",
+      "name": "Conjunto de folhas",
+      "category": "Conjuntos",
+      "image": "assets/jewelry-29503017.jpg",
+      "price": null,
+      "stock": null,
+      "source": "https://www.pexels.com/photo/elegant-gold-jewelry-set-with-leaf-design-29503017/",
+      "description": "Fotografia real de referência para demonstrar a vitrine. Esta peça não pertence ao catálogo comercial da Amarílis. Materiais, medidas e disponibilidade não foram definidos."
+    },
+    {
+      "id": "perolas",
+      "name": "Conjunto de pérolas",
+      "category": "Conjuntos",
+      "image": "assets/jewelry-16210460.jpg",
+      "price": null,
+      "stock": null,
+      "source": "https://www.pexels.com/photo/necklace-and-bracelet-and-earrings-16210460/",
+      "description": "Fotografia real de referência para demonstrar a vitrine. Esta peça não pertence ao catálogo comercial da Amarílis. Materiais, medidas e disponibilidade não foram definidos."
+    }
+  ]
+}
