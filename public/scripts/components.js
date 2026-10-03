@@ -35,10 +35,11 @@ function header(home) {
       </div>
     </nav>
     <nav class="header-categories" aria-label="Categorias de joias">
-      ${categories
-        .map((c) => html`<a href="#/catalogo?categoria=${encodeURIComponent(c)}">${c}</a>`)
-        .join('')}<a href="#/catalogo">Todas as joias</a>
+      ${categories.map((c) => categoryMenu(c)).join('')}<a class="all-categories" href="#/catalogo"
+        >Todas as joias</a
+      >
     </nav>`;
+  setupCategoryMenus();
 }
 
 function updateCounters() {
@@ -185,3 +186,70 @@ function field(name, label, type = 'text', wide = false, autocomplete = '') {
     />
   </div>`;
 }
+
+function categoryMenu(category) {
+  const items = products.filter((p) => p.category === category);
+  const href = '#/catalogo?categoria=' + encodeURIComponent(category);
+  return html`<details class="category-entry">
+    <summary>${categoryIcon(category)}<span>${esc(category)}</span></summary>
+    <div class="mega-panel">
+      <div class="mega-links">
+        <h2>${esc(category)}</h2>
+        <a class="mega-all" href="${href}"
+          >Explorar ${esc(category.toLocaleLowerCase('pt-BR'))} ${icon('chevron')}</a
+        >
+        <div class="mega-products">
+          ${items.map((p) => html`<a href="#/produto/${p.id}">${esc(p.name)}</a>`).join('')}
+        </div>
+        <p class="tiny muted">
+          Peças de referência para apresentação. Catálogo comercial em preparação.
+        </p>
+      </div>
+      <div class="mega-discover">
+        <h3>Sua seleção</h3>
+        <a href="#/favoritos">Meus favoritos</a><a href="#/carrinho">Ver meu carrinho</a
+        ><a href="#/contato">Dúvidas sobre a coleção</a>
+      </div>
+      ${items.length
+        ? html`<a class="mega-preview" href="${href}"
+            ><img src="${items[0].image}" alt="${esc(items[0].name)} — referência" /><span
+              >Conheça os detalhes ${icon('chevron')}</span
+            ></a
+          >`
+        : ''}
+    </div>
+  </details>`;
+}
+function setupCategoryMenus() {
+  const root = $('#header');
+  const entries = [...root.querySelectorAll('.category-entry')];
+  for (const entry of entries) {
+    let openedByHover = false;
+    entry.querySelector('summary').addEventListener('click', (e) => {
+      if (openedByHover && entry.open) {
+        e.preventDefault();
+        openedByHover = false;
+      }
+    });
+    entry.addEventListener('toggle', () => {
+      if (entry.open) for (const other of entries) if (other !== entry) other.open = false;
+    });
+    entry.addEventListener('mouseenter', () => {
+      if (matchMedia('(hover: hover) and (pointer: fine)').matches && !entry.open) {
+        openedByHover = true;
+        entry.open = true;
+      }
+    });
+    entry.addEventListener('mouseleave', () => {
+      if (
+        !entry.contains(document.activeElement) &&
+        matchMedia('(hover: hover) and (pointer: fine)').matches
+      )
+        entry.open = false;
+    });
+    entry.addEventListener('focusout', (e) => {
+      if (!entry.contains(e.relatedTarget)) entry.open = false;
+    });
+  }
+}
+

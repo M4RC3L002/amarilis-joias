@@ -61,6 +61,27 @@
       "stock": null,
       "source": "https://www.pexels.com/photo/necklace-and-bracelet-and-earrings-16210460/",
       "description": "Fotografia real de referência para demonstrar a vitrine. Esta peça não pertence ao catálogo comercial da Amarílis. Materiais, medidas e disponibilidade não foram definidos."
+    },
+    {
+      "id": "anel",
+      "name": "Anel dourado delicado",
+      "category": "Anéis",
+      "image": "assets/jewelry-12194372.jpg",
+      "price": null,
+      "stock": null,
+      "source": "https://www.pexels.com/photo/a-gold-ring-on-ring-holder-12194372/",
+      "description": "Fotografia de referência para apresentação. Não representa um produto disponível na Amarílis. Materiais, medidas, preço e disponibilidade serão definidos no catálogo oficial."
+    },
+    {
+      "id": "relogio",
+      "name": "Relógio com detalhes dourados",
+      "category": "Relógios",
+      "image": "assets/jewelry-14778525.jpg",
+      "price": null,
+      "stock": null,
+      "source": "https://www.pexels.com/photo/a-wristwatch-on-a-white-surface-14778525/",
+      "description": "Fotografia de referência para apresentação. Não representa um produto disponível na Amarílis. Materiais, medidas, preço e disponibilidade serão definidos no catálogo oficial."
     }
   ]
 }
+

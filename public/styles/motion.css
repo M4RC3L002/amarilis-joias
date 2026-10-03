@@ -273,3 +273,18 @@
     transform: none;
   }
 }
+
+.category-entry summary > span {
+  transition: border-color var(--motion-fast) ease;
+}
+@media (hover: hover) and (pointer: fine) {
+  .category-entry summary:hover > span {
+    border-bottom-color: var(--gold);
+  }
+  #header .mega-panel a:hover {
+    color: #75572f;
+    text-decoration: underline;
+    text-underline-offset: 5px;
+  }
+}
+

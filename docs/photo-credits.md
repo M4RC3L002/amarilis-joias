@@ -10,3 +10,9 @@ Fotos de referência do Pexels; não são produtos disponíveis na Amarílis. Li
 - Conjunto de pérolas: https://www.pexels.com/photo/necklace-and-bracelet-and-earrings-16210460/
 
 Licença: https://www.pexels.com/license/
+
+- Anel dourado delicado: Melike B, Pexels — https://www.pexels.com/photo/a-gold-ring-on-ring-holder-12194372/
+- Relógio com detalhes dourados: pratik prasad, Pexels — https://www.pexels.com/photo/a-wristwatch-on-a-white-surface-14778525/
+
+As marcas visíveis nas fotos de referência não indicam parceria, revenda ou disponibilidade comercial da Amarílis.
+

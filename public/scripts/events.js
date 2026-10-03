@@ -182,3 +182,20 @@ function downloadDraft(filename, content, type) {
   link.remove();
   setTimeout(() => URL.revokeObjectURL(url), 1000);
 }
+
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') {
+    const entry = document.querySelector('.category-entry[open]');
+    if (entry) {
+      entry.open = false;
+      entry.querySelector('summary').focus();
+    }
+  }
+});
+document.addEventListener('click', (e) => {
+  if (!e.target.closest('.category-entry'))
+    document.querySelectorAll('.category-entry[open]').forEach((entry) => {
+      entry.open = false;
+    });
+});
+
