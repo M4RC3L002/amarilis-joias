@@ -9,10 +9,14 @@ function checkout() {
   return html`<section class="page wrap">
     ${breadcrumb('Checkout')}
     <h1>Seu próximo detalhe</h1>
-    <p class="steps">1. Carrinho · 2. Seus dados · 3. Revisão</p>
+    <ol class="checkout-steps" aria-label="Etapas do checkout">
+      <li><a href="#/carrinho">1. Carrinho</a></li>
+      <li aria-current="step">2. Seus dados</li>
+      <li id="reviewStep">3. Revisão</li>
+    </ol>
     <div class="cart-layout">
       <div class="panel">
-        <h2>Conheça o checkout</h2>
+        <h2>Dados para entrega</h2>
         <p class="info">
           Use dados fictícios para testar. Os dados deste formulário ficam apenas nesta página, não
           são enviados nem armazenados.

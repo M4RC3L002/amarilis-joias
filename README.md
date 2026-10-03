@@ -57,3 +57,4 @@ Cloudflare Pages acompanha a branch `main`: framework **Nenhum**, comando de bui
 Cadastrar produtos reais com preços e estoque; integrar pedidos, pagamento e frete; definir canais de atendimento e políticas da loja. O carrinho e os favoritos são locais ao navegador. Os dados de teste do checkout não são enviados nem armazenados.
 
 As cores e o logotipo vêm da identidade fornecida. Georgia é a fonte provisória dos títulos até recebermos a webfont autorizada da Oligha. As fotos da vitrine são referências ilustrativas, com [créditos](docs/photo-credits.md).
+

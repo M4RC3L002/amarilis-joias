@@ -138,9 +138,22 @@ function empty(title, text) {
 
 function quantity(value, id = '') {
   return html`<div class="quantity">
-    <button data-quantity="${id}" data-delta="-1" aria-label="Diminuir quantidade">−</button
+    <button
+      data-quantity="${id}"
+      data-delta="-1"
+      ${value <= 1 ? 'disabled' : ''}
+      aria-label="Diminuir quantidade"
+    >
+      −</button
     ><span ${id ? '' : 'id="productQuantity"'}>${value}</span
-    ><button data-quantity="${id}" data-delta="1" aria-label="Aumentar quantidade">+</button>
+    ><button
+      data-quantity="${id}"
+      data-delta="1"
+      ${value >= 99 ? 'disabled' : ''}
+      aria-label="Aumentar quantidade"
+    >
+      +
+    </button>
   </div>`;
 }
 

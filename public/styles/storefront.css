@@ -773,3 +773,149 @@ dialog {
     gap: 0;
   }
 }
+
+/* Inner pages share the brand's editorial rhythm. */
+.page h1 {
+  text-wrap: balance;
+  letter-spacing: -0.025em;
+}
+.page-intro {
+  max-width: 64ch;
+  line-height: 1.75;
+  color: var(--muted);
+  margin: 16px 0 32px;
+}
+.catalog-layout {
+  margin-top: 28px;
+}
+.active-filters,
+.selection-tools {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-bottom: 24px;
+}
+.active-filters {
+  padding: 14px 18px;
+  background: var(--cream);
+}
+.active-filters a {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+.related {
+  margin-top: 70px;
+  padding-top: 40px;
+  border-top: 1px solid var(--line);
+}
+.related h2 {
+  margin-bottom: 28px;
+  font-size: 34px;
+}
+.product .textlink {
+  display: inline-flex;
+  margin: 18px 22px 12px 0;
+}
+.contact-layout {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 64px;
+  align-items: start;
+}
+.contact-story img {
+  width: 100%;
+  max-height: 390px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 24px;
+}
+.contact-layout .panel {
+  margin-top: 8px;
+}
+.contact-layout h2 {
+  font-size: 30px;
+}
+.field textarea {
+  width: 100%;
+  font: inherit;
+  color: var(--green);
+  padding: 14px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  resize: vertical;
+  min-height: 150px;
+  background: white;
+}
+.checkout-steps {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  gap: 12px 28px;
+  padding: 0;
+  margin: 24px 0 36px;
+  color: var(--muted);
+}
+.checkout-steps [aria-current] {
+  color: var(--green);
+  border-bottom: 2px solid var(--gold);
+  padding-bottom: 8px;
+}
+.review-items {
+  list-style: none;
+  padding: 0;
+  margin: 24px 0;
+}
+.review-items li {
+  display: flex;
+  gap: 24px;
+  justify-content: space-between;
+  padding: 14px 0;
+  border-bottom: 1px solid var(--line);
+}
+.review-items strong {
+  white-space: nowrap;
+}
+.confirmation .button {
+  margin: 12px 0;
+}
+.confirmation .textlink {
+  display: block;
+  margin: 12px 0;
+}
+@media (min-width: 801px) {
+  .summary {
+    position: sticky;
+    top: 24px;
+  }
+}
+@media (max-width: 800px) {
+  .contact-layout {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 28px;
+  }
+  .contact-layout h1 {
+    font-size: 38px;
+  }
+  .related {
+    margin-top: 42px;
+    padding-top: 28px;
+  }
+  .related .grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .review-items li {
+    gap: 12px;
+  }
+}
+
+@media (min-width: 801px) {
+  .page.wrap {
+    width: calc(100% - 64px);
+    max-width: 1200px;
+  }
+  .page.reading {
+    max-width: 800px;
+  }
+}

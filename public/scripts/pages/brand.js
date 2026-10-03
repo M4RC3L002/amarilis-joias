@@ -1,7 +1,7 @@
 function about() {
   return html`<section class="page wrap reading">
     ${breadcrumb('Amarílis')}
-    <p class="eyebrow">Nosso universo</p>
+
     <h1>A essência dos detalhes.</h1>
     <p>
       Amarílis é flor, força e delicadeza. Nosso universo combina verde profundo, dourado e creme,
@@ -31,20 +31,76 @@ function about() {
   </section>`;
 }
 
+// Configure only verified business channels before opening the store.
+const contactChannels = { email: '', whatsapp: '' };
 function contact() {
-  return html`<section class="page wrap reading">
+  return html`<section class="page wrap">
     ${breadcrumb('Contato')}
-    <h1>Vamos conversar</h1>
-    <p>Estamos preparando os canais oficiais de atendimento da Amarílis.</p>
-    <div class="info">
-      WhatsApp, e-mail e redes sociais serão disponibilizados junto com o catálogo. Nenhum canal de
-      atendimento está conectado nesta versão.
+    <div class="contact-layout">
+      <div class="contact-story">
+        <h1>Um detalhe começa com uma conversa.</h1>
+        <p class="page-intro">
+          Dúvidas sobre a coleção, presentes ou a sua seleção? Prepare sua mensagem para a Amarílis.
+        </p>
+        <img src="assets/brand-4.jpg" alt="Identidade visual e embalagens Amarílis" />
+        <details class="details">
+          <summary>Já posso comprar?</summary>
+          <p>
+            Estamos preparando o catálogo oficial. As peças desta vitrine são demonstrativas e o
+            pagamento ainda não está conectado.
+          </p>
+        </details>
+        <details class="details">
+          <summary>Onde encontro minha seleção?</summary>
+          <p>
+            Seus favoritos e carrinho ficam salvos neste navegador. Você pode baixar sua seleção na
+            página do carrinho.
+          </p>
+        </details>
+      </div>
+      <div class="panel">
+        <h2>Escreva sua mensagem</h2>
+        <p class="info">
+          ${contactChannels.email
+            ? 'Abra sua mensagem no aplicativo de e-mail para enviá-la.'
+            : 'O atendimento ainda não está conectado. Você pode baixar um rascunho; nenhum dado será enviado ou armazenado pelo site.'}
+        </p>
+        <form id="contactForm">
+          <div class="form-grid">
+            ${field('contactName', 'Seu nome', 'text', true, 'name')}${field(
+              'contactEmail',
+              'Seu e-mail',
+              'email',
+              true,
+              'email',
+            )}
+            <div class="field wide">
+              <label for="contactSubject">Assunto</label
+              ><select id="contactSubject" name="subject">
+                <option>Sobre a coleção</option>
+                <option>Minha seleção</option>
+                <option>Presentes</option>
+                <option>Outro assunto</option>
+              </select>
+            </div>
+            <div class="field wide">
+              <label for="contactMessage">Mensagem</label
+              ><textarea
+                id="contactMessage"
+                name="message"
+                rows="6"
+                required
+                maxlength="3000"
+              ></textarea>
+            </div>
+          </div>
+          <button class="button full" type="submit">
+            ${contactChannels.email ? 'Abrir mensagem no e-mail' : 'Baixar rascunho da mensagem'}
+          </button>
+          <p id="contactStatus" role="status" class="tiny muted"></p>
+        </form>
+      </div>
     </div>
-    <img src="assets/brand-4.jpg" alt="Apresentação visual da marca nas redes sociais" /><a
-      class="button"
-      href="#/catalogo"
-      >Conheça o universo Amarílis</a
-    >
   </section>`;
 }
 

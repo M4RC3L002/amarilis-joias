@@ -8,25 +8,27 @@ function route() {
   header(path === '/');
   footer();
   productQuantity = 1;
-  let html,
+  let content,
     title = 'Amarílis Jóias';
-  if (path === '/') html = home();
+  if (path === '/') content = home();
   else if (path === '/catalogo') {
-    html = catalog(params);
+    content = catalog(params);
     title = 'Joias · Amarílis';
-  } else if (path === '/favoritos') html = catalog(params, true);
-  else if (path.startsWith('/produto/')) html = product(path.split('/')[2]);
-  else if (path === '/carrinho') html = cartPage();
-  else if (path === '/checkout') html = checkout();
-  else if (path === '/sobre') html = about();
-  else if (path === '/contato') html = contact();
-  else if (path === '/informacoes') html = information();
+  } else if (path === '/favoritos') content = catalog(params, true);
+  else if (path.startsWith('/produto/')) content = product(path.split('/')[2]);
+  else if (path === '/carrinho') content = cartPage();
+  else if (path === '/checkout') content = checkout();
+  else if (path === '/sobre') content = about();
+  else if (path === '/contato') content = contact();
+  else if (path === '/informacoes') content = information();
   else
-    html = html`<section class="page wrap">
+    content = html`<section class="page wrap">
       ${empty('Página não encontrada', 'Volte ao catálogo para continuar explorando.')}
     </section>`;
-  $('#main').innerHTML = html;
-  document.title = title;
+  $('#main').innerHTML = content;
+  const heading = $('#main h1')?.textContent;
+  document.title = path === '/' ? title : `${heading || 'Página não encontrada'} · Amarílis`;
+  if (lastInputWasKeyboard) $('#main').focus({ preventScroll: true });
   enhancePage(path);
   window.scrollTo({ top: 0, behavior: 'instant' });
 }

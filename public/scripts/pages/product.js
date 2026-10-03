@@ -31,6 +31,7 @@ function product(id) {
             Adicionar à demonstração
           </button>
         </div>
+        <a class="textlink" href="#/carrinho">Ver minha seleção</a>
         <button class="textlink" data-favorite="${p.id}" aria-pressed="${favorites.includes(p.id)}">
           ${favorites.includes(p.id) ? 'Remover dos favoritos' : 'Salvar nos favoritos'}
         </button>
@@ -50,5 +51,15 @@ function product(id) {
         </details>
       </div>
     </div>
+    <section class="related" aria-labelledby="relatedTitle">
+      <h2 id="relatedTitle">Outros detalhes para conhecer</h2>
+      <div class="grid">
+        ${products
+          .filter((item) => item.id !== p.id)
+          .slice(0, 3)
+          .map(card)
+          .join('')}
+      </div>
+    </section>
   </section>`;
 }

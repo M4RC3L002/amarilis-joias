@@ -180,3 +180,66 @@
   height: 20px;
   filter: brightness(0) saturate(100%);
 }
+
+/* Hover feedback stays on actionable controls and never moves page content. */
+.filters a,
+.textlink,
+.remove,
+.quantity button,
+.actions .icon,
+.details summary {
+  transition:
+    color var(--motion-fast) ease,
+    background-color var(--motion-fast) ease;
+}
+.filters a {
+  border-radius: 6px;
+  padding-inline: 10px;
+}
+.textlink,
+.remove {
+  text-underline-offset: 5px;
+}
+:where(a, button, input, select, textarea, summary):focus-visible {
+  outline: 2px solid var(--green);
+  outline-offset: 4px;
+}
+.navlinks a:focus-visible::after,
+.header-categories a:focus-visible::after {
+  transform: scaleX(1);
+}
+.quantity button:disabled {
+  opacity: 0.4;
+  cursor: default;
+}
+@media (hover: hover) and (pointer: fine) {
+  .filters a:hover {
+    background: var(--cream);
+    color: var(--green);
+  }
+  .textlink:hover,
+  .remove:hover {
+    color: #75572f;
+    text-decoration: underline;
+  }
+  .quantity button:not(:disabled):hover,
+  .actions .icon:hover {
+    background: var(--cream);
+    color: var(--green);
+  }
+  .button:not(:disabled):hover {
+    background: #1c5043;
+    color: #fff;
+  }
+  .button.outline:not(:disabled):hover {
+    background: var(--green);
+    color: var(--cream);
+  }
+  .details summary:hover {
+    color: #75572f;
+  }
+  .footer a:hover {
+    text-decoration: underline;
+    text-underline-offset: 5px;
+  }
+}

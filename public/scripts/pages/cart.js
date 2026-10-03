@@ -2,6 +2,15 @@ function cartPage() {
   return html`<section class="page wrap">
     ${breadcrumb('Carrinho')}
     <h1>Seu carrinho</h1>
+    <p class="page-intro">
+      Revise as peças e quantidades antes de continuar. Sua seleção fica salva neste navegador.
+    </p>
+    ${count()
+      ? html`<div class="selection-tools">
+          <a class="textlink" href="#/catalogo">Continuar explorando</a
+          ><button class="textlink" data-export>Baixar minha seleção</button>
+        </div>`
+      : ''}
     ${count()
       ? html`<div class="cart-layout">
           <div class="panel">
