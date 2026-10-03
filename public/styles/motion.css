@@ -51,7 +51,7 @@
   height: 18px;
   background: currentColor;
   mask: url('../assets/chevron.svg') center / contain no-repeat;
-  transform: rotate(-90deg);
+  transform: rotate(0deg);
   transition: transform var(--motion-fast) var(--ease-out);
 }
 .button,
@@ -128,7 +128,7 @@
     color: #75572f;
   }
   .piece-link:hover::after {
-    transform: translateX(4px) rotate(-90deg);
+    transform: translateX(4px) rotate(0deg);
   }
   .navlinks a:hover::after,
   .header-categories a:hover::after {
@@ -172,7 +172,7 @@
     transform: none;
   }
   .piece-link:hover::after {
-    transform: rotate(-90deg);
+    transform: rotate(0deg);
   }
 }
 .card .favorite img {
