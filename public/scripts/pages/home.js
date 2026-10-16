@@ -1,18 +1,20 @@
 let featuredCategory = '';
 
 function home() {
-  return html` <section class="hero" data-design="desktop-header-7">
-      <img
-        src="assets/hero.png"
-        alt="Modelo usando brincos e pulseiras dourados"
-        fetchpriority="high"
-      />
-      <div class="hero-content">
-        <div class="hero-copy glass-panel">
+  return html` <section class="discovery-hero wrap" aria-label="Universo Amarílis">
+        <div class="discovery-copy hero-copy">
           <h1>Um detalhe.<br />Todo o seu brilho.</h1>
           <p>Joias que acompanham quem você é, dos pequenos momentos às ocasiões especiais.</p>
-          <a class="button gold" href="#/catalogo">Explore as joias</a>
+          <a class="button" href="#/catalogo">Explore as joias ${icon('chevron')}</a>
         </div>
+      <div class="constellation" aria-label="Peças de referência em destaque">
+        ${['colar', 'brincos', 'anel', 'folhas'].map((id, index) => {
+          const p = products.find((item) => item.id === id);
+          return html`<a class="floating-piece floating-piece-${index + 1}" href="#/produto/${p.id}">
+            <img src="${p.image}" alt="${esc(p.name)}, fotografia de referência" width="320" height="320" ${index === 0 ? 'fetchpriority="high"' : ''} />
+            <span>${esc(p.category)} ${icon('chevron')}</span>
+          </a>`;
+        }).join('')}
       </div>
     </section>
     <div class="experience-strip wrap">
