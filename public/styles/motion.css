@@ -3,6 +3,8 @@
   --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
   --motion-fast: 140ms;
   --motion-standard: 220ms;
+  --motion-reveal: 420ms;
+  --motion-hero: 560ms;
 }
 .campaign-entry .hero h1 {
   animation: none;
@@ -287,4 +289,3 @@
     text-underline-offset: 5px;
   }
 }
-
